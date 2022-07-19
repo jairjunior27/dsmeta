@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
 import NotificationButton from "../NotificationButton";
+import { BASE_URL } from "../Utils/request";
 import "./style.css";
 
 function SalesCard() {
@@ -16,7 +17,7 @@ function SalesCard() {
 
      useEffect(() =>{
     
-         axios.get("http://localhost:8080/sales")
+         axios.get(`${BASE_URL}/sales`)
          .then(response =>{
             console.log(response.data);
          })

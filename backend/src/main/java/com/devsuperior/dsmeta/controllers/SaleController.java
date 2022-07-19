@@ -16,7 +16,7 @@ import com.devsuperior.dsmeta.services.SmsService;
 @RestController
 @RequestMapping(value = "/sales")
 public class SaleController {
-     
+
 	@Autowired
 	private SaleService service;
 	
@@ -25,10 +25,10 @@ public class SaleController {
 	
 	@GetMapping
 	public Page<Sale> findSales(
-			@RequestParam(value = "minDate", defaultValue = "") String minDate,
-			@RequestParam(value = "maxDate", defaultValue = "") String maxDate,
-			Pageable pageable){
-		return service.findsales(minDate,maxDate,pageable);
+			@RequestParam(value="minDate", defaultValue = "") String minDate, 
+			@RequestParam(value="maxDate", defaultValue = "") String maxDate, 
+			Pageable pageable) {
+		return service.findSales(minDate, maxDate, pageable);
 	}
 	
 	@GetMapping("/{id}/notification")
