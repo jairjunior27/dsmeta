@@ -4,7 +4,7 @@ import DatePicker from "react-datepicker";
 import {Sale} from "../../models/sale";
 import "react-datepicker/dist/react-datepicker.css";
 import NotificationButton from "../NotificationButton";
-import { BASE_URL } from "../Utils/request";
+import { BASE_URL } from "../../Utils/request";
 import "./style.css";
 
 function SalesCard() {
@@ -83,7 +83,7 @@ function SalesCard() {
                 <td>R$ {sale.amount.toFixed(2)}</td>
                 <td>
                   <div className="dsmeta-red-btn-container">
-                   <NotificationButton/>
+                   <NotificationButton saleId ={sale.id}/>
                   </div>
                 </td>
               </tr>
